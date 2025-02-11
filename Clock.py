@@ -16,11 +16,10 @@ digital_clock.pack(fill='both', expand=1, ipadx=50, ipady=10)
 # Function to update the time every second
 def update_time():
     # Set initial time
-    display_text = tk.StringVar()
     initial_time = strftime('%H:%M:%S', localtime())
-    display_text.set(initial_time)
-
     current_time = strftime('%H:%M:%S', localtime())
+    display_text = tk.StringVar()
+    display_text.set(initial_time)
     digital_clock.config(textvariable=display_text, text=current_time)
     digital_clock.after(1000, update_time)
 
@@ -30,4 +29,4 @@ def clock():
     # Run the window
     root.mainloop()
 
-#clock()
+clock()
