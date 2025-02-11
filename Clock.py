@@ -5,13 +5,17 @@ from time import strftime, localtime
 import tkinter as tk
 
 # Create a window
-root = tk.Tk()
-root.title('Digital Clock')
-digital_clock = tk.Label(root, 
+def Window():
+    root = tk.Tk()
+    root.title('Digital Clock')
+    digital_clock = tk.Label(root, 
                          font=('calibri', 20, 'bold'), 
                          bg='black', 
                          fg='white')
-digital_clock.pack(fill='both', expand=1, ipadx=50, ipady=10)
+    digital_clock.pack(fill='both', expand=1, ipadx=50, ipady=10)
+    return root,digital_clock
+
+root, digital_clock = Window()
 
 # Function to update the time every second
 def update_time():
